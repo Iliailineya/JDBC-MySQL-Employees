@@ -25,4 +25,11 @@ public class PositionService extends Services {
         PositionReadController controller = new PositionReadController(service, view);
         controller.readPositions();
     }
+    public void readPositionWithEmployees() {
+        PositionReadRepository repository = new PositionReadRepository();
+        PositionReadService service = new PositionReadService(repository);
+        PositionReadView view = new PositionReadView();
+        PositionReadController controller = new PositionReadController(service, view);
+        controller.readPositionWithEmployees();
+    }
 }

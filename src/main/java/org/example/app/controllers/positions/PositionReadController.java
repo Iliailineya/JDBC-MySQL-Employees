@@ -21,4 +21,12 @@ public class PositionReadController {
         view.getOutput(str);
         AppStarter.startApp();
     }
+
+    public void readPositionWithEmployees() {
+        // Отримуємо результат
+        String str = service.readPositionWithEmployees();
+        // Передаємо результа на виведення
+        view.getOutput(str);
+        AppStarter.startApp();
+    }
 }

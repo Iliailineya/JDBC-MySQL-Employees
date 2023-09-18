@@ -1,6 +1,8 @@
 package org.example.app.services.positions;
 
+import org.example.app.entities.Employee;
 import org.example.app.entities.Position;
+import org.example.app.entities.PositionWithEmployeesDTO;
 import org.example.app.repositories.positions.PositionReadRepository;
 import org.example.app.utils.Constants;
 
@@ -39,5 +41,43 @@ public class PositionReadService {
                 return "\n_ Positions ___________\n" + stringBuilder;
             } else return Constants.DATA_ABSENT_MSG;
         } else return Constants.DATA_ABSENT_MSG;
+    }
+
+    public String readPositionWithEmployees() {
+        List<PositionWithEmployeesDTO> positionsWithEmployees = repository.readPositionWithEmployees();
+
+        StringBuilder result = new StringBuilder("\n_ Positions with Employees ___________\n");
+
+        if (positionsWithEmployees.isEmpty()) {
+            return Constants.DATA_ABSENT_MSG;
+        } else {
+            AtomicInteger count = new AtomicInteger(0);
+
+            for (PositionWithEmployeesDTO positionDTO : positionsWithEmployees) {
+                result.append(count.incrementAndGet())
+                        .append(") Position ID: ")
+                        .append(positionDTO.getPositionId())
+                        .append(", Position Name: ")
+                        .append(positionDTO.getPositionName())
+                        .append("\n");
+
+                List<Employee> employees = positionDTO.getEmployees();
+                if (!employees.isEmpty()) {
+                    for (Employee employee : employees) {
+                        result.append("   - Employee ID: ")
+                                .append(employee.getId())
+                                .append(", Last Name: ")
+                                .append(employee.getLastName())
+                                .append(", First Name: ")
+                                .append(employee.getFirstName())
+                                .append("\n");
+                    }
+                } else {
+                    result.append("   No employees for this position.\n");
+                }
+            }
+        }
+
+        return result.toString();
     }
 }

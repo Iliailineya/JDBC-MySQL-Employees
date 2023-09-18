@@ -38,6 +38,7 @@ public final class Constants {
                 __ Position Menu ___________
                 1 - Create a position
                 2 - View positions
+                3 - View positions with employees
                 0 - Close the App.
                 """;
 }

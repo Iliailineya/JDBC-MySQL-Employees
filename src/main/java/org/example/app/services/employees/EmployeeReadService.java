@@ -15,12 +15,7 @@ public class EmployeeReadService {
         this.repository = repository;
     }
 
-
     public String readEmployees() {
-        return "\n_ Employees ___________" + overEmployees();
-    }
-
-    public String overEmployees() {
         List<Employee> employees = repository.readEmployees();
 
         if (employees.isEmpty()) {
@@ -39,7 +34,7 @@ public class EmployeeReadService {
                         .append(", Phone: ").append(employee.getPhone())
                         .append(", Salary: ").append(employee.getSalary());
             }
-            return result.toString();
+            return "\n_ Employees ___________" + result;
         }
     }
 

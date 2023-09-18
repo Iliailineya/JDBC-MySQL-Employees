@@ -21,6 +21,7 @@ public class PositionController {
         switch (choice) {
             case 1 -> service.createPosition();
             case 2 -> service.readPositions();
+            case 3 -> service.readPositionWithEmployees();
             case 0 -> view.close();
             default -> service.getNoSuchOption(choice);
         }
