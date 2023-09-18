@@ -3,7 +3,6 @@ package org.example.app.utils;
 import org.example.app.database.PassReader;
 
 public final class Constants {
-
     // DB
     public final static String DB_DRIVER = "jdbc:mysql://localhost:3306/";
     public final static String DB_NAME = "demo_db";
@@ -19,6 +18,4 @@ public final class Constants {
     public final static String INPUT_REQ_MSG = "Input required.";
     public final static String DATA_INSERT_MSG = "\n>> Created.";
     public final static String DATA_ABSENT_MSG = "\n>> No data!";
-
-
 }

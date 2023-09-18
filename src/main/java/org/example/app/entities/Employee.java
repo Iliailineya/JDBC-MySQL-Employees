@@ -11,10 +11,19 @@ import lombok.Setter;
 @Entity
 @Table(name = "employees")
 public class Employee {
+    public Employee(int id, String lastName, String firstName, String birthDate, int positionId, String phone, double salary) {
+        this.id = id;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.birthDate = birthDate;
+        this.positionId = positionId;
+        this.phone = phone;
+        this.salary = salary;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @Column(name = "id")
     private int id;
 
     @Column(name = "last_name")
@@ -34,5 +43,4 @@ public class Employee {
 
     @Column(name = "salary")
     private double salary;
-
 }

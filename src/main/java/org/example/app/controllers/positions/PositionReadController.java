@@ -2,7 +2,6 @@ package org.example.app.controllers.positions;
 
 import org.example.app.services.positions.PositionReadService;
 import org.example.app.utils.AppStarter;
-import org.example.app.utils.Constants;
 import org.example.app.views.positions.PositionReadView;
 
 public class PositionReadController {

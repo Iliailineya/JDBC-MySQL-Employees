@@ -10,7 +10,6 @@ import lombok.*;
 @Entity
 @Table(name = "positions")
 public class Position {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -18,5 +17,4 @@ public class Position {
 
     @Column(name = "name")
     private String name;
-
 }
