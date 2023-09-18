@@ -12,9 +12,9 @@ public class PositionCreateView extends ItemView {
     }
 
     public Position getData() {
-        System.out.print("Enter position detail: ");
+        System.out.print("Enter position name: ");
         Position position = new Position();
-        position.setName(inputReader.readString("Name"));
+        position.setName(inputReader.readString(""));
         return position;
     }
 }
