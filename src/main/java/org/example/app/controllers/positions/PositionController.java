@@ -1,7 +1,6 @@
 package org.example.app.controllers.positions;
 
 import org.example.app.services.positions.PositionService;
-import org.example.app.utils.Constants;
 import org.example.app.views.positions.PositionView;
 
 public class PositionController {
@@ -22,7 +21,7 @@ public class PositionController {
         switch (choice) {
             case 1 -> service.createPosition();
             case 2 -> service.readPositions();
-            case 0 -> view.getOutput(choice, Constants.APP_CLOSE_MSG);
+            case 0 -> view.close();
             default -> service.getNoSuchOption(choice);
         }
     }

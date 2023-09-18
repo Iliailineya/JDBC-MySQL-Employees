@@ -1,8 +1,6 @@
 package org.example.app.views.employees;
 
-public class EmployeeReadView {
+import org.example.app.views.ItemView;
 
-    public void getOutput(String output) {
-        System.out.println(output);
-    }
+public class EmployeeReadView extends ItemView {
 }

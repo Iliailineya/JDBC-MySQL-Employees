@@ -7,7 +7,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AppView {
-
     Scanner scanner;
     int option;
 
@@ -24,19 +23,11 @@ public class AppView {
     }
 
     private void showMenu() {
-        System.out.print("""
-                
-                ______ Main Menu ___________
-                1 - Positions
-                2 - Employees
-                0 - Close the App.
-                """);
+        System.out.print(Constants.MENU);
     }
 
-    public void getOutput(int choice, String output) {
-        if (choice == 0) System.out.println(output);
-        // Scanner лучше закрыть здесь,
-        // т.к. в этом методе завершаем программу.
+    public void close() {
+        System.out.println(Constants.APP_CLOSE_MSG);
         scanner.close();
         System.exit(0);
     }

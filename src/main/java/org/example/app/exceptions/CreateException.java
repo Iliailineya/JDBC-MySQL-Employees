@@ -3,11 +3,11 @@ package org.example.app.exceptions;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PositionCreateException extends RuntimeException {
+public class CreateException extends RuntimeException {
 
     Map<String, String> errors;
 
-    public PositionCreateException(String message, Map<String, String> errors) {
+    public CreateException(String message, Map<String, String> errors) {
         super(message);
         this.errors = errors;
     }

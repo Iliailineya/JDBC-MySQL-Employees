@@ -2,12 +2,12 @@ package org.example.app.views.positions;
 
 import org.example.app.utils.AppStarter;
 import org.example.app.utils.Constants;
+import org.example.app.views.AppView;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class PositionView {
-
+public class PositionView extends AppView {
     Scanner scanner;
     int option;
 
@@ -24,18 +24,6 @@ public class PositionView {
     }
 
     private void showMenu() {
-        System.out.print("""
-                
-                __ Position Menu ___________
-                1 - Create a position
-                2 - View positions
-                0 - Close the App.
-                """);
-    }
-
-    public void getOutput(int choice, String output) {
-        if (choice == 0) System.out.println(output);
-        scanner.close();
-        System.exit(0);
+        System.out.print(Constants.POSITION_MENU);
     }
 }

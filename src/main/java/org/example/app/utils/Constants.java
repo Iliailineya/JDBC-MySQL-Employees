@@ -18,4 +18,25 @@ public final class Constants {
     public final static String INPUT_REQ_MSG = "Input required.";
     public final static String DATA_INSERT_MSG = "\n>> Created.";
     public final static String DATA_ABSENT_MSG = "\n>> No data!";
+    public final static String MENU = """
+                
+                ______ Main Menu ___________
+                1 - Positions
+                2 - Employees
+                0 - Close the App.
+                """;
+    public final static String EMPLOYEE_MENU = """
+                
+                __ Employee Menu ___________
+                1 - Create a employee
+                2 - View employee
+                0 - Close the App.
+                """;
+    public final static String POSITION_MENU = """
+                
+                __ Position Menu ___________
+                1 - Create a position
+                2 - View positions
+                0 - Close the App.
+                """;
 }

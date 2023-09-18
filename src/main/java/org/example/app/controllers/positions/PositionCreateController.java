@@ -16,9 +16,7 @@ public class PositionCreateController {
     }
 
     public void createPosition() {
-        String[] data = view.getData();
-        Position position = new Position();
-        position.setName(data[0]);
+        Position position = view.getData();
         String str = service.createPosition(position);
         view.getOutput(str);
         AppStarter.startApp();

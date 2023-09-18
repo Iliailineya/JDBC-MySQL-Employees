@@ -1,34 +1,28 @@
 package org.example.app.controllers.employees;
 
-import org.example.app.entities.Employee;
 import org.example.app.services.employees.EmployeeService;
-import org.example.app.utils.AppStarter;
-import org.example.app.utils.Constants;
-import org.example.app.views.employees.EmployeeCreateView;
-import org.example.app.views.employees.EmployeeReadView;
+import org.example.app.views.employees.EmployeeView;
 
 public class EmployeeController {
 
     EmployeeService service;
-    EmployeeCreateView createView;
-    EmployeeReadView readView;
+    EmployeeView view;
 
-    public EmployeeController(EmployeeService service, EmployeeCreateView createView, EmployeeReadView readView) {
+    public EmployeeController(EmployeeView view, EmployeeService service) {
         this.service = service;
-        this.createView = createView;
-        this.readView = readView;
+        this.view = view;
     }
 
-    public void createEmployee() {
-        Employee employee = createView.getEmployeeInput();
-        String result = service.createEmployee(employee);
-        createView.showResult(result);
-        AppStarter.startApp();
+    public void runEmployees() {
+        filterChoice(view.chooseOption());
     }
 
-    public void readEmployees() {
-        String result = service.readEmployees();
-        readView.showEmployees(result);
-        AppStarter.startApp();
+    private void filterChoice(int choice) {
+        switch (choice) {
+            case 1 -> service.createEmployee();
+            case 2 -> service.readEmployees();
+            case 0 -> view.close();
+            default -> service.getNoSuchOption(choice);
+        }
     }
 }

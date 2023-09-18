@@ -23,17 +23,13 @@ public class PositionReadRepository {
 
             String sql = "SELECT id, name FROM " + Constants.TABLE_POSITIONS;
             ResultSet rs = stmt.executeQuery(sql);
+
             while (rs.next()) {
-                list.add(new Position(
-                                rs.getInt("id"),
-                                rs.getString("name")
-                        )
-                );
+                list.add(Position.fromResultSet(rs));
             }
-            // Повертаємо колекцію даних
+
             return list;
         } catch (SQLException e) {
-            // Якщо помилка, повертаємо порожню колекцію
             return Collections.emptyList();
         }
     }

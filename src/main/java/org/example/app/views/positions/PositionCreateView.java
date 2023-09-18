@@ -1,17 +1,20 @@
 package org.example.app.views.positions;
 
-import java.util.Scanner;
+import org.example.app.entities.Position;
+import org.example.app.utils.InputReader;
+import org.example.app.views.ItemView;
 
-public class PositionCreateView {
+public class PositionCreateView extends ItemView {
+    private final InputReader inputReader;
 
-    public String[] getData() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter position name: ");
-        String position = scanner.nextLine().trim();
-        return new String[]{position};
+    public PositionCreateView() {
+        this.inputReader = new InputReader();
     }
 
-    public void getOutput(String output) {
-        System.out.println(output);
+    public Position getData() {
+        System.out.print("Enter position detail: ");
+        Position position = new Position();
+        position.setName(inputReader.readString("Name"));
+        return position;
     }
 }

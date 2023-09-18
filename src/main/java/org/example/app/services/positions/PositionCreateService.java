@@ -1,7 +1,7 @@
 package org.example.app.services.positions;
 
 import org.example.app.entities.Position;
-import org.example.app.exceptions.PositionCreateException;
+import org.example.app.exceptions.CreateException;
 import org.example.app.repositories.positions.PositionCreateRepository;
 import org.example.app.utils.Constants;
 
@@ -26,8 +26,8 @@ public class PositionCreateService {
 
         if (!errors.isEmpty()) {
             try {
-                throw new PositionCreateException("Check inputs", errors);
-            } catch (PositionCreateException e) {
+                throw new CreateException("Check inputs", errors);
+            } catch (CreateException e) {
                 return e.getErrors(errors);
             }
         }

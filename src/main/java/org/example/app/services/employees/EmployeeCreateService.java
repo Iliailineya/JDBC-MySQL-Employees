@@ -1,7 +1,7 @@
 package org.example.app.services.employees;
 
 import org.example.app.entities.Employee;
-import org.example.app.exceptions.PositionCreateException;
+import org.example.app.exceptions.CreateException;
 import org.example.app.repositories.employees.EmployeeCreateRepository;
 import org.example.app.utils.Constants;
 
@@ -33,8 +33,8 @@ public class EmployeeCreateService {
 
         if (!errors.isEmpty()) {
             try {
-                throw new PositionCreateException("Check inputs", errors);
-            } catch (PositionCreateException e) {
+                throw new CreateException("Check inputs", errors);
+            } catch (CreateException e) {
                 return e.getErrors(errors);
             }
         }

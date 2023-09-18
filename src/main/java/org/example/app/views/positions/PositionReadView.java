@@ -1,8 +1,5 @@
 package org.example.app.views.positions;
 
-public class PositionReadView {
+import org.example.app.views.ItemView;
 
-    public void getOutput(String output) {
-        System.out.println(output);
-    }
-}
+public class PositionReadView extends ItemView {}

@@ -1,7 +1,6 @@
 package org.example.app.controllers;
 
 import org.example.app.services.AppService;
-import org.example.app.utils.Constants;
 import org.example.app.views.AppView;
 
 public class AppController {
@@ -22,7 +21,7 @@ public class AppController {
         switch (choice) {
             case 1 -> service.getPositions();
             case 2 -> service.getEmployees();
-            case 0 -> view.getOutput(choice, Constants.APP_CLOSE_MSG);
+            case 0 -> view.close();
             default -> service.getNoSuchOption(choice);
         }
     }

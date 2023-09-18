@@ -1,12 +1,10 @@
 package org.example.app.services.employees;
 
+import org.example.app.entities.Employee;
+import org.example.app.repositories.employees.EmployeeReadRepository;
+import org.example.app.utils.Constants;
 
-
-        import org.example.app.entities.Employee;
-        import org.example.app.repositories.employees.*;
-        import org.example.app.utils.Constants;
-
-        import java.util.List;
+import java.util.List;
 
 public class EmployeeReadService {
 

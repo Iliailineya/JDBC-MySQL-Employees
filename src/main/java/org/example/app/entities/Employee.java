@@ -5,21 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 @Setter
 @Getter
 @NoArgsConstructor
 @Entity
 @Table(name = "employees")
 public class Employee {
-    public Employee(int id, String lastName, String firstName, String birthDate, int positionId, String phone, double salary) {
-        this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.birthDate = birthDate;
-        this.positionId = positionId;
-        this.phone = phone;
-        this.salary = salary;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -43,4 +37,16 @@ public class Employee {
 
     @Column(name = "salary")
     private double salary;
+
+    public static Employee fromResultSet(ResultSet rs) throws SQLException {
+        Employee employee = new Employee();
+        employee.setId(rs.getInt("id"));
+        employee.setLastName(rs.getString("last_name"));
+        employee.setFirstName(rs.getString("first_name"));
+        employee.setBirthDate(rs.getString("birth_date"));
+        employee.setPositionId(rs.getInt("position_id"));
+        employee.setPhone(rs.getString("phone"));
+        employee.setSalary(rs.getDouble("salary"));
+        return employee;
+    }
 }

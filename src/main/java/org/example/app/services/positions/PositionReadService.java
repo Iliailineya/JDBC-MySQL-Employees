@@ -29,12 +29,12 @@ public class PositionReadService {
                 AtomicInteger count = new AtomicInteger(0);
                 StringBuilder stringBuilder = new StringBuilder();
                 list.forEach((prop) ->
-                            stringBuilder.append(count.incrementAndGet())
-                                    .append(") id: ")
-                                    .append(prop.getId())
-                                    .append(", ")
-                                    .append(prop.getName())
-                                    .append("\n")
+                        stringBuilder.append(count.incrementAndGet())
+                                .append(") id: ")
+                                .append(prop.getId())
+                                .append(", ")
+                                .append(prop.getName())
+                                .append("\n")
                 );
                 return "\n_ Positions ___________\n" + stringBuilder;
             } else return Constants.DATA_ABSENT_MSG;
