@@ -25,4 +25,12 @@ public class EmployeeService extends Services {
         EmployeeReadController controller = new EmployeeReadController(service, view);
         controller.readEmployees();
     }
+
+    public void readEmployeesWithPosition() {
+        EmployeeReadRepository repository = new EmployeeReadRepository();
+        EmployeeReadService service = new EmployeeReadService(repository);
+        EmployeeReadView view = new EmployeeReadView();
+        EmployeeReadController controller = new EmployeeReadController(service, view);
+        controller.readEmployeesWithPosition();
+    }
 }

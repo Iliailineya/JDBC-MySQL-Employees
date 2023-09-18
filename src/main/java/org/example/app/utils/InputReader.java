@@ -15,11 +15,15 @@ public class InputReader {
 
     public int readInt(String prompt) {
         System.out.print(prompt);
-        return scanner.nextInt();
+        int i = scanner.nextInt();
+        scanner.nextLine();
+        return i;
     }
 
     public double readDouble(String prompt) {
         System.out.print(prompt);
-        return scanner.nextDouble();
+        double d = scanner.nextDouble();
+        scanner.nextLine();
+        return d;
     }
 }

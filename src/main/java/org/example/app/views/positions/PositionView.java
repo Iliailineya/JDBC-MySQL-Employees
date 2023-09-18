@@ -11,6 +11,7 @@ public class PositionView extends AppView {
     Scanner scanner;
     int option;
 
+    @Override
     public int chooseOption() {
         scanner = new Scanner(System.in);
         showMenu();

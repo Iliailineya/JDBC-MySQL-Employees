@@ -30,6 +30,7 @@ public final class Constants {
                 __ Employee Menu ___________
                 1 - Create a employee
                 2 - View employee
+                3 - View employee with position
                 0 - Close the App.
                 """;
     public final static String POSITION_MENU = """

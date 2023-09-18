@@ -14,8 +14,11 @@ public class EmployeeReadController {
     }
 
     public void readEmployees() {
-        String result = service.readEmployees();
-        view.getOutput(result);
+        view.getOutput(service.readEmployees());
+        AppStarter.startApp();
+    }
+    public void readEmployeesWithPosition() {
+        view.getOutput(service.readEmployeesWithPosition());
         AppStarter.startApp();
     }
 }
